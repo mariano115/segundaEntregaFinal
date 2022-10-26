@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const carritoRouter = require("./router/carritoRouter");
 const productosRouter = require("./router/productosRouter");
+const Config = require("./config");
 
 const app = express();
 app.use(express.json());
@@ -13,7 +14,7 @@ app.listen(PORT, () => {
 });
 
 mongoose.connect(
-  "mongodb+srv://admin:admin@cluster0.3dwgpdj.mongodb.net/?retryWrites=true&w=majority",
+  Config.urlMongo,
   {
     useNewUrlParser: true,
   },
