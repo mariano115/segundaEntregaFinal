@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 mongoose.connect(
-  "mongodb+srv://admin:admin@cluster0.3dwgpdj.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://<user>:<password>@cluster0.3dwgpdj.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
   },
