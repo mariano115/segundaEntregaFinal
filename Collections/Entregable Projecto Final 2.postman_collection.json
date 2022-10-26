@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "323808da-dc17-43af-b3cf-f1328b75760b",
-		"name": "Entregable Projecto Final 1",
+		"name": "Entregable Projecto Final 2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "6391686"
 	},
@@ -39,103 +39,6 @@
 					"response": []
 				},
 				{
-					"name": "Delete Carrito (Vacia un carrito y lo elimina)",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/carrito/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carrito",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listar Productos en el carrito seleccionado",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/carrito/2/productos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carrito",
-								"2",
-								"productos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Añadir produto por id de carrito",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 10,\r\n    \"timeStamp\": \"timestampTest\",\r\n    \"nombre\": \"nombreTest\",\r\n    \"descripcion\": \"descripcionTest\",\r\n    \"codigo\": \"codigoTest\",\r\n    \"foto\": \"fotoTest\",\r\n    \"precio\": \"precioTest\",\r\n    \"stock\": \"stockTest\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/carrito/1/productos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carrito",
-								"1",
-								"productos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar producto dentro de un carrito por id´s",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/carrito/5/productos/10",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carrito",
-								"5",
-								"productos",
-								"10"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get Carritos",
 					"request": {
 						"method": "GET",
@@ -150,6 +53,103 @@
 							"path": [
 								"api",
 								"carrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Carrito (Vacia un carrito y lo elimina)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/{{idCarrito}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"{{idCarrito}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Productos en el carrito seleccionado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/{{idCarrito}}/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"{{idCarrito}}",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir produto por id de carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63598e9aba4a4e82d30356bd\",\r\n    \"timeStamp\": \"timestampTest\",\r\n    \"nombre\": \"nombreTest\",\r\n    \"descripcion\": \"descripcionTest\",\r\n    \"codigo\": \"codigoTest\",\r\n    \"foto\": \"fotoTest\",\r\n    \"precio\": \"precioTest\",\r\n    \"stock\": \"stockTest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/635897257aa44f3cf3e53a61/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"635897257aa44f3cf3e53a61",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar producto dentro de un carrito por id´s",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/{{idCarrito}}/productos/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"{{idCarrito}}",
+								"productos",
+								"10"
 							]
 						}
 					},
@@ -186,7 +186,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/productos/2",
+							"raw": "http://localhost:8080/api/productos/{{idProducto}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -195,7 +195,7 @@
 							"path": [
 								"api",
 								"productos",
-								"2"
+								"{{idProducto}}"
 							]
 						}
 					},
@@ -251,7 +251,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/2?admin=true",
+							"raw": "http://localhost:8080/api/productos/{{idProducto}}?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -260,7 +260,7 @@
 							"path": [
 								"api",
 								"productos",
-								"2"
+								"{{idProducto}}"
 							],
 							"query": [
 								{
@@ -287,7 +287,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/productos/2?admin=true",
+							"raw": "http://localhost:8080/api/productos/{{idProducto}}?admin=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -296,7 +296,7 @@
 							"path": [
 								"api",
 								"productos",
-								"2"
+								"{{idProducto}}"
 							],
 							"query": [
 								{
@@ -314,7 +314,19 @@
 			"name": "Ruta no encontrada",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rutanoexistente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rutanoexistente"
+					]
+				}
 			},
 			"response": []
 		}
