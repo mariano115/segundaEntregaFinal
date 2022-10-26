@@ -58,7 +58,7 @@ const deleteProductosByIdOfCarritoAndIdProduct = async (id, idProducto) => {
   try {
     const res = await carritosModel.updateOne(
       { _id: id },
-      { $pull: { productos: { id: idProducto } } }
+      { $pull: { productos: { id: parseInt(idProducto) } } }
     );
 
     console.log("res", res);

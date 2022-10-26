@@ -10,7 +10,6 @@ const getProductosById = async (id) => {
 };
 
 const crearProducto = async (nuevoProducto) => {
-  console.log(nuevoProducto);
   try {
     const producto = {
       timeStamp: new Date(),
@@ -31,23 +30,8 @@ const crearProducto = async (nuevoProducto) => {
 };
 
 const editarProducto = async (id, product) => {
-  const productos = await getProductos();
   try {
-    /* Finding the index of the product to modify. */
-    const indexToModify = productos.findIndex(
-      (productToModify) => productToModify.id == id
-    );
-    if (indexToModify === -1) return false;
-    /* Modifying the product in the array. */
-    productos[indexToModify] = {
-      ...productos[indexToModify],
-      ...product,
-    };
-    await fs.promises.writeFile(
-      `productos.json`,
-      JSON.stringify(productos, null, 2)
-    );
-    return productos[indexToModify];
+    return await productosModel.findOneAndUpdate({ _id: id }, { ...product });
   } catch (error) {
     console.log(error);
     return false;

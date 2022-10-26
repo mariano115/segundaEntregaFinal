@@ -31,8 +31,6 @@ router.post("/", adminValidator, async (req, res) => {
 });
 
 router.put("/:id", adminValidator, async (req, res) => {
-  console.log(req.params.id);
-
   try {
     const response = await PersistenceProducto.editarProducto(
       req.params.id,
