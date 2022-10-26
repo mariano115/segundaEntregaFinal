@@ -1,4 +1,3 @@
-const { default: mongoose } = require("mongoose");
 const carritosModel = require("../models/Carrito.model");
 
 const getCarritos = async () => {
@@ -56,15 +55,10 @@ const addProductosByIdOfCarrito = async (id, producto) => {
 
 const deleteProductosByIdOfCarritoAndIdProduct = async (id, idProducto) => {
   try {
-    const res = await carritosModel.updateOne(
+    await carritosModel.updateOne(
       { _id: id },
       { $pull: { productos: { id: parseInt(idProducto) } } }
     );
-
-    console.log("res", res);
-    const carrito = await carritosModel.find({ _id: id });
-
-    console.log("carrito", carrito);
 
     return true;
   } catch (error) {
