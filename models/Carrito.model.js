@@ -5,11 +5,4 @@ const carritosSchema = new Schema({
   productos: { type: Array, required: true },
 });
 
-/* class Carrito {
-  constructor(id, productos = []) {
-    this.id = id;
-    this.timeStamp = Date.now();
-    this.productos = productos;
-  }
-} */
 module.exports = model("carritos", carritosSchema);
